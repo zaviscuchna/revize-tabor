@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revize Tábor – Jan Lexa | Certifikovaný revizní technik</title>
+<meta name="description" content="Profesionální elektrorevize pro byty, rodinné domy, firmy i průmyslové objekty. Rychle, spolehlivě, za férovou cenu. Tábor a okolí." />
+<link rel="icon" type="image/png" href="data:image/png;base64,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" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+/* ── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0c131a;
+  color: #e8edf2;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+:root {
+  --bg:        #0c131a;
+  --bg2:       #111a23;
+  --bg3:       #162030;
+  --border:    rgba(255,255,255,0.07);
+  --amber:     #f5a623;
+  --amber-dim: rgba(245,166,35,0.10);
+  --text:      #e8edf2;
+  --muted:     #7a90ab;
+  --muted2:    #4a5e72;
+  --r:         12px;
+  --r-lg:      20px;
+}
+h1,h2,h3 { line-height: 1.15; letter-spacing: -0.03em; color: var(--text); }
+h1 { font-size: clamp(2.2rem, 5.5vw, 4.8rem); font-weight: 900; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); font-weight: 800; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p  { color: var(--muted); line-height: 1.7; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2.5rem); }
+section { padding: clamp(4.5rem, 9vw, 8rem) 0; }
+
+/* ── Nav ───────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(12,19,26,0.90); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+.nav-logo {
+  font-size: 1rem; font-weight: 800; color: var(--text);
+  text-decoration: none; display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-icon {
+  height: 36px; width: auto; flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a { color: var(--muted); font-size: 0.88rem; font-weight: 500; text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--amber); color: #0c131a !important; font-weight: 700 !important; padding: .5rem 1.1rem; border-radius: 8px; transition: opacity .2s !important; }
+.nav-cta:hover { opacity: .88; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh; padding-top: 66px;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&q=80');
+  background-size: cover; background-position: center 30%;
+  z-index: 0;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(12,19,26,0.96) 40%, rgba(12,19,26,0.72) 70%, rgba(12,19,26,0.45) 100%);
+}
+#hero .container { position: relative; z-index: 1; }
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 400px; gap: 4rem; align-items: center;
+}
+@media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero-card { display: none; } }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245,166,35,0.10); border: 1px solid rgba(245,166,35,0.3);
+  color: var(--amber); font-size: .73rem; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase;
+  padding: 6px 15px; border-radius: 100px; margin-bottom: 1.6rem;
+}
+.hero-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--amber); flex-shrink: 0;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+.hero-title em { font-style: normal; color: var(--amber); }
+.hero-sub {
+  font-size: clamp(.95rem, 1.8vw, 1.1rem); color: var(--muted);
+  max-width: 520px; margin: 1.3rem 0 2.2rem;
+}
+.hero-actions { display: flex; gap: .9rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber); color: #0c131a;
+  font-size: .97rem; font-weight: 700; padding: .85rem 1.7rem;
+  border-radius: 10px; text-decoration: none;
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1), box-shadow .28s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(245,166,35,.28); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text); font-size: .93rem; font-weight: 600;
+  text-decoration: none; padding: .85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.14); transition: color .2s, border-color .2s;
+}
+.btn-ghost:hover { color: var(--amber); border-color: var(--amber); }
+.hero-stats {
+  display: flex; gap: 2.5rem; margin-top: 2.8rem;
+  padding-top: 1.8rem; border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.hs-num { font-size: 1.9rem; font-weight: 900; letter-spacing: -.04em; }
+.hs-num span { color: var(--amber); }
+.hs-lbl { font-size: .79rem; color: var(--muted); margin-top: 1px; }
+
+/* Hero card */
+.hero-card {
+  background: rgba(17,26,35,.92); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.8rem; backdrop-filter: blur(12px);
+  position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute; inset: -1px; border-radius: var(--r-lg);
+  background: linear-gradient(135deg, rgba(245,166,35,.2), transparent 55%);
+  pointer-events: none;
+}
+.hc-label { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.1rem; }
+.hc-row { display: flex; justify-content: space-between; align-items: center; padding: .9rem 0; border-bottom: 1px solid var(--border); }
+.hc-row:last-of-type { border: none; }
+.hc-name { font-size: .88rem; font-weight: 600; color: var(--text); }
+.hc-sub  { font-size: .75rem; color: var(--muted); margin-top: 1px; }
+.hc-price { font-size: .9rem; font-weight: 800; color: var(--amber); }
+.hc-cta {
+  margin-top: 1.2rem; width: 100%; background: var(--amber); color: #0c131a;
+  border: none; font-family: 'Inter',sans-serif; font-size: .93rem; font-weight: 700;
+  padding: .85rem; border-radius: 10px; cursor: pointer;
+  text-decoration: none; display: block; text-align: center; transition: opacity .2s;
+}
+.hc-cta:hover { opacity: .88; }
+
+/* ── Clients strip ──────────────────────────────────────────────── */
+#clients { padding: 2.8rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.cl-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted2); text-align: center; margin-bottom: 1.6rem; }
+.cl-logos { display: flex; align-items: center; justify-content: center; gap: clamp(1.5rem, 4vw, 3rem); flex-wrap: wrap; }
+.cl-name { font-size: clamp(.78rem, 1.4vw, .92rem); font-weight: 700; color: var(--muted2); letter-spacing: -.01em; white-space: nowrap; }
+
+/* ── Section header ─────────────────────────────────────────────── */
+.sec-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: .8rem; }
+.sec-sub { color: var(--muted); max-width: 500px; margin-bottom: 3rem; }
+
+/* ── Why us ─────────────────────────────────────────────────────── */
+#proc-my { background: var(--bg); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.3rem; }
+.why-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: 1.7rem;
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94), border-color .35s, box-shadow .35s;
+}
+.why-card:hover { transform: translateY(-5px); border-color: rgba(245,166,35,.28); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.why-icon { width: 44px; height: 44px; border-radius: 11px; background: var(--amber-dim); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.1rem; }
+.why-card h3 { margin-bottom: .4rem; }
+.why-card p  { font-size: .88rem; }
+
+/* ── Photo gallery ──────────────────────────────────────────────── */
+#galerie { background: var(--bg2); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 240px 240px;
+  gap: 10px;
+}
+@media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } }
+@media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+.gallery-item {
+  position: relative; overflow: hidden; border-radius: var(--r);
+  cursor: pointer;
+}
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .55s cubic-bezier(.25,.46,.45,.94), filter .55s;
+  filter: brightness(.75) saturate(.8);
+  display: block;
+}
+.gallery-item:hover img { transform: scale(1.06); filter: brightness(.55) saturate(.7); }
+.gallery-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.1rem 1.2rem .9rem;
+  background: linear-gradient(transparent, rgba(0,0,0,.75));
+  font-size: .8rem; font-weight: 600; color: #fff;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity .3s, transform .3s;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; transform: translateY(0); }
+
+/* Lightbox */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,.92); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 88vh; border-radius: var(--r); object-fit: contain; }
+#lightbox-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  color: #fff; font-size: 1.8rem; cursor: pointer; background: none; border: none;
+  opacity: .7; transition: opacity .2s;
+}
+#lightbox-close:hover { opacity: 1; }
+
+/* ── Services ───────────────────────────────────────────────────── */
+#sluzby { background: var(--bg); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.1rem; }
+.service-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 1.5rem 1.7rem; display: flex; gap: 1.1rem; align-items: flex-start;
+  transition: border-color .3s, transform .3s;
+}
+.service-card:hover { border-color: rgba(245,166,35,.22); transform: translateY(-3px); }
+.s-icon { width: 40px; height: 40px; flex-shrink: 0; background: var(--amber-dim); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.s-body h3 { font-size: .97rem; margin-bottom: .3rem; }
+.s-body p  { font-size: .84rem; }
+.s-price { margin-top: .65rem; display: inline-flex; align-items: center; gap: 5px; background: var(--amber-dim); border: 1px solid rgba(245,166,35,.22); color: var(--amber); font-size: .77rem; font-weight: 700; padding: 3px 11px; border-radius: 6px; }
+
+/* ── CTA Banner ─────────────────────────────────────────────────── */
+#cta-banner { padding: 4.5rem 0; }
+.cta-box {
+  background: linear-gradient(135deg, rgba(245,166,35,.1), rgba(245,166,35,.03));
+  border: 1px solid rgba(245,166,35,.22); border-radius: var(--r-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: flex; gap: 2rem; align-items: center; justify-content: space-between; flex-wrap: wrap;
+}
+.cta-box h2 em { font-style: normal; color: var(--amber); }
+.cta-box p { color: var(--muted); margin-top: .4rem; max-width: 420px; }
+.cta-right { display: flex; flex-direction: column; gap: .75rem; flex-shrink: 0; }
+.cta-phone { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: color .2s; }
+.cta-phone:hover { color: var(--amber); }
+.cta-phone-ico { width: 38px; height: 38px; border-radius: 9px; background: var(--amber); display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
+.cta-email { font-size: .86rem; color: var(--muted); text-decoration: none; padding-left: 48px; transition: color .2s; }
+.cta-email:hover { color: var(--text); }
+
+/* ── References ─────────────────────────────────────────────────── */
+#reference { background: var(--bg2); }
+.ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: .9rem; }
+.ref-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.2rem 1.4rem; transition: border-color .3s; }
+.ref-card:hover { border-color: rgba(245,166,35,.28); }
+.ref-card.highlight { border-color: rgba(245,166,35,.28); background: rgba(245,166,35,.06); }
+.ref-card.highlight .rc-name { color: var(--amber); }
+.rc-name { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.rc-loc  { font-size: .76rem; color: var(--muted); }
+
+/* ── Partners ───────────────────────────────────────────────────── */
+#spoluprace { background: var(--bg); }
+.partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.3rem; }
+.partner-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 1.7rem; display: flex; gap: 1rem; align-items: flex-start;
+  transition: border-color .3s;
+}
+.partner-card:hover { border-color: rgba(245,166,35,.22); }
+.p-icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--amber-dim); border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.p-body a { color: var(--amber); font-size: .82rem; text-decoration: none; }
+.p-body a:hover { text-decoration: underline; }
+
+/* ── Pricing ────────────────────────────────────────────────────── */
+#cenik { background: var(--bg2); }
+.pricing-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
+.pricing-table thead tr { background: var(--bg3); }
+.pricing-table th { padding: .9rem 1.4rem; text-align: left; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.pricing-table th:last-child { text-align: right; }
+.pricing-table td { padding: 1rem 1.4rem; border-top: 1px solid var(--border); font-size: .9rem; }
+.pricing-table tr:hover td { background: rgba(255,255,255,.02); }
+.pt-name { color: var(--text); font-weight: 600; }
+.pt-desc { font-size: .78rem; color: var(--muted); margin-top: 2px; }
+.pt-price { color: var(--amber); font-weight: 800; font-size: .97rem; text-align: right; white-space: nowrap; }
+.pt-note  { color: var(--muted); font-size: .82rem; text-align: right; }
+
+/* ── Contact ────────────────────────────────────────────────────── */
+#kontakt { background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+@media (max-width: 740px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info { display: flex; flex-direction: column; gap: 1.4rem; }
+.ci-row { display: flex; gap: 1rem; align-items: flex-start; }
+.ci-ico { width: 42px; height: 42px; flex-shrink: 0; background: var(--amber-dim); border: 1px solid rgba(245,166,35,.18); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; }
+.ci-lbl { font-size: .7rem; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: .08em; }
+.ci-val { font-size: .92rem; font-weight: 600; color: var(--text); margin-top: 2px; }
+.ci-val a { color: inherit; text-decoration: none; }
+.ci-val a:hover { color: var(--amber); }
+.contact-form { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem; }
+.form-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.4rem; }
+.form-row { margin-bottom: .9rem; }
+.form-row label { display: block; font-size: .75rem; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .06em; }
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 9px; color: var(--text); font-family: 'Inter',sans-serif;
+  font-size: .9rem; padding: .7rem .95rem; outline: none; resize: vertical;
+  transition: border-color .2s;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: rgba(245,166,35,.38); }
+.form-row select option { background: #162030; }
+.form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+@media (max-width: 480px) { .form-2col { grid-template-columns: 1fr; } }
+.form-submit {
+  width: 100%; background: var(--amber); color: #0c131a;
+  border: none; border-radius: 10px; font-family: 'Inter',sans-serif;
+  font-size: .97rem; font-weight: 700; padding: .9rem; cursor: pointer; margin-top: .4rem;
+  transition: opacity .2s, transform .28s cubic-bezier(.34,1.56,.64,1);
+}
+.form-submit:hover { opacity: .88; transform: translateY(-2px); }
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.footer-copy { font-size: .8rem; color: var(--muted); }
+.footer-links { display: flex; gap: 1.4rem; }
+.footer-links a { font-size: .8rem; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── Scroll reveal ──────────────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; }
+.d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; }
+.d4 { transition-delay: .4s; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img class="nav-logo-icon" src="https://revize-tabor.cz/wp-content/uploads/2018/06/logoos2.png" alt="Revize Tábor logo" />
+      Revize Tábor
+    </a>
+    <ul class="nav-links">
+      <li><a href="#proc-my">Proč my</a></li>
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#galerie">Fotogalerie</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+      <li><a href="#reference">Reference</a></li>
+      <li><a href="#kontakt" class="nav-cta">Poptávka</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/logoos2.png"
+             alt="Revize Tábor"
+             style="height:54px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin-bottom:1.6rem;display:block;" />
+        <div class="hero-badge">Certifikovaný revizní technik · Tábor a Jihočeský kraj</div>
+        <h1 class="hero-title">
+          Elektrorevize,<br>
+          které provedeme<br>
+          <em>správně na poprvé</em>
+        </h1>
+        <p class="hero-sub">
+          Přes 20 let zkušeností s revizemi bytů, rodinných domů, hotelů,
+          komerčních center i průmyslových hal. Rychlé termíny,
+          přehledné zprávy, férová cena.
+        </p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary">⚡ Chci nezávaznou nabídku</a>
+          <a href="tel:+420603153214" class="btn-ghost">📞 +420 603 153 214</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hs-num">20<span>+</span></div>
+            <div class="hs-lbl">let praxe v oboru</div>
+          </div>
+          <div>
+            <div class="hs-num">500<span>+</span></div>
+            <div class="hs-lbl">úspěšných revizí</div>
+          </div>
+          <div>
+            <div class="hs-num">EON<span> & ČEZ</span></div>
+            <div class="hs-lbl">patří mezi naše klienty</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hc-label">Orientační ceny revizí</div>
+        <div class="hc-row">
+          <div><div class="hc-name">Byt</div><div class="hc-sub">Elektroinstalace + rozvaděč</div></div>
+          <div class="hc-price">od 1 000 Kč</div>
+        </div>
+        <div class="hc-row">
+          <div><div class="hc-name">Rodinný dům</div><div class="hc-sub">Elektroinstalace + rozvaděč</div></div>
+          <div class="hc-price">od 1 500 Kč</div>
+        </div>
+        <div class="hc-row">
+          <div><div class="hc-name">Hromosvod RD</div><div class="hc-sub">Kompletní revize</div></div>
+          <div class="hc-price">1 500 Kč</div>
+        </div>
+        <div class="hc-row">
+          <div><div class="hc-name">Firemní objekt</div><div class="hc-sub">Cena dle rozsahu</div></div>
+          <div class="hc-price">~1 000 Kč/rozvaděč</div>
+        </div>
+        <a href="#kontakt" class="hc-cta">Poptat revizi zdarma →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS STRIP ─────────────────────────────────────────────── -->
+<section id="clients">
+  <div class="container">
+    <div class="cl-label">Důvěřují nám mimo jiné</div>
+    <div class="cl-logos">
+      <div class="cl-name">EON</div>
+      <div class="cl-name">ČEZ</div>
+      <div class="cl-name">Komerční banka</div>
+      <div class="cl-name">Hotel Dvořák</div>
+      <div class="cl-name">OKIN Facility</div>
+      <div class="cl-name">Linde</div>
+      <div class="cl-name">Parkhotel Hluboká</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ────────────────────────────────────────────────────── -->
+<section id="proc-my">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Proč si vybrat nás</div>
+      <h2>Jeden odborník.<br>Plná odpovědnost.</h2>
+      <p class="sec-sub">Nejsme agentura přeposílající zakázky. Jan Lexa je zkušený revizní technik, který za každou revizí stojí osobně.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal d1">
+        <div class="why-icon">🏆</div>
+        <h3>Dvacet let praxe</h3>
+        <p>Od bytů po průmyslové haly. Klienti jako EON, ČEZ nebo Komerční banka se nevybírají náhodou — vybírají si spolehlivost.</p>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-icon">📋</div>
+        <h3>Přehledná revizní zpráva</h3>
+        <p>Obdržíte dokument platný pro pojišťovnu, správce budovy i stavební úřad. Srozumitelně, bez žargonu, s jasným závěrem.</p>
+      </div>
+      <div class="why-card reveal d3">
+        <div class="why-icon">📅</div>
+        <h3>Rychlý termín</h3>
+        <p>Termín domluvíme obvykle do 2–3 dnů. Vyhovíme vašemu rozvrhu — pracovní den, večer nebo víkend.</p>
+      </div>
+      <div class="why-card reveal d4">
+        <div class="why-icon">💰</div>
+        <h3>Cena předem, bez překvapení</h3>
+        <p>Řekneme vám cenu před příjezdem. Cestovné v oblasti Tábora zpravidla zdarma. Žádná položka navíc na faktuře.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO GALLERY ─────────────────────────────────────────────── -->
+<section id="galerie">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Fotogalerie</div>
+      <h2>Ukázka naší práce</h2>
+      <p class="sec-sub">Reálné fotografie z dokončených zakázek — rozvaděče, průmyslové instalace, řídicí panely.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item tall" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr1.jpg')">
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr1.jpg" alt="Revize elektrického rozvaděče – jističe a kabeláž" loading="lazy" />
+        <div class="gallery-caption">Revize elektrického rozvaděče</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr2.jpg')">
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr2.jpg" alt="Datový rozvaděč – síťová infrastruktura" loading="lazy" />
+        <div class="gallery-caption">Datový a síťový rozvaděč</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr11.jpg')">
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr11.jpg" alt="Svorkovnice – pečlivé uspořádání kabeláže" loading="lazy" />
+        <div class="gallery-caption">Svorkovnicové skříně s označením</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr13.jpg')">
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr13.jpg" alt="Průmyslový řídicí panel – Siemens stykače" loading="lazy" />
+        <div class="gallery-caption">Průmyslový řídicí panel (Siemens)</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr3.jpg')">
+        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr3.jpg" alt="Serverové vybavení – datové centrum" loading="lazy" />
+        <div class="gallery-caption">Serverová místnost – revize a instalace</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<!-- ── SERVICES ──────────────────────────────────────────────────── -->
+<section id="sluzby">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Naše služby</div>
+      <h2>Kompletní elektrorevize<br>pro každý typ objektu</h2>
+      <p class="sec-sub">Od bytu po průmyslovou halu. Spolupracujeme také s elektroinstalačními firmami jako technický dohled.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="s-icon">🏠</div>
+        <div class="s-body">
+          <h3>Revize bytu</h3>
+          <p>Prověření elektroinstalace a rozvaděče. Nutné při prodeji, po rekonstrukci nebo pro pojišťovnu.</p>
+          <div class="s-price">od 1 000 Kč</div>
+        </div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="s-icon">🏡</div>
+        <div class="s-body">
+          <h3>Revize rodinného domu</h3>
+          <p>Kompletní prověření elektroinstalace, rozvaděče i hromosvodu. Platný protokol pro pojišťovnu.</p>
+          <div class="s-price">od 1 500 Kč</div>
+        </div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="s-icon">⛈️</div>
+        <div class="s-body">
+          <h3>Revize hromosvodu</h3>
+          <p>Pravidelná revize bleskosvodné soustavy dle ČSN EN 62305. Povinná pro RD i komerční objekty.</p>
+          <div class="s-price">1 500 Kč</div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-icon">🏢</div>
+        <div class="s-body">
+          <h3>Revize firemních objektů</h3>
+          <p>Hotely, komerční centra, průmyslové haly. Práce na více rozvaděčích, výsledný protokol do archivu.</p>
+          <div class="s-price">~1 000 Kč/rozvaděč</div>
+        </div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="s-icon">🔧</div>
+        <div class="s-body">
+          <h3>Revize nářadí a spotřebičů</h3>
+          <p>Elektrické ruční nářadí a spotřebiče pro firmy a živnostníky. Výhodná cena od 20 kusů.</p>
+          <div class="s-price">30–50 Kč/ks</div>
+        </div>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="s-icon">🔒</div>
+        <div class="s-body">
+          <h3>Bezpečnostní a kamerové systémy</h3>
+          <p>Instalace a revize bezpečnostních systémů, kamerových a datových rozvodů ve spolupráci s partnery.</p>
+          <div class="s-price">Cena dohodou</div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="s-icon">💡</div>
+        <div class="s-body">
+          <h3>Chytré elektroinstalace</h3>
+          <p>Smart home a inteligentní systémy řízení budov — poradenství, projekt i realizace.</p>
+          <div class="s-price">Cena dohodou</div>
+        </div>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="s-icon">🎓</div>
+        <div class="s-body">
+          <h3>Odborný dohled a poradenství</h3>
+          <p>Technický dohled nad elektroinstalačními pracemi, kontroly a odborné vedení pro firmy i investory.</p>
+          <div class="s-price">Cena dohodou</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ────────────────────────────────────────────────── -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div>
+        <h2>Potřebujete revizi<br><em>do konce měsíce?</em></h2>
+        <p>Zavolejte nebo pošlete poptávku — termín domluvíme obvykle do 2–3 pracovních dnů. Cestovné v oblasti Tábora zdarma.</p>
+      </div>
+      <div class="cta-right">
+        <a href="tel:+420603153214" class="cta-phone">
+          <div class="cta-phone-ico">📞</div>
+          +420 603 153 214
+        </a>
+        <a href="mailto:dir@cmail.cz" class="cta-email">dir@cmail.cz</a>
+        <a href="#kontakt" class="btn-primary" style="margin-top:.3rem">Poslat poptávku →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REFERENCES ────────────────────────────────────────────────── -->
+<section id="reference">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Reference</div>
+      <h2>Klienti, kteří nám<br>důvěřují opakovaně</h2>
+      <p class="sec-sub" style="margin-bottom:2.2rem">Od rodinných domků až po sítě velkých firem — každou zakázku bereme stejně zodpovědně.</p>
+    </div>
+    <div class="ref-grid reveal">
+      <div class="ref-card highlight">
+        <div class="rc-name">EON a ČEZ</div>
+        <div class="rc-loc">Elektroměrové rozvaděče</div>
+      </div>
+      <div class="ref-card highlight">
+        <div class="rc-name">Komerční banka</div>
+        <div class="rc-loc">OKIN FACILITY – revize poboček</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Hotel Dvořák</div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Hotel Dvořák</div>
+        <div class="rc-loc">České Budějovice</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Obchodní galerie Dvořák</div>
+        <div class="rc-loc">České Budějovice</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Obchodní dům Dvořák</div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Parkhotel Hluboká</div>
+        <div class="rc-loc">Hluboká nad Vltavou</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Hotel Žižkovy lázně</div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Průmyslová zóna Vožická</div>
+        <div class="rc-loc">Průmyslové a skladové haly, Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">Linde</div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">OKIN Facility</div>
+        <div class="rc-loc">Facility management</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-name">ÚZSVN</div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:1.4rem;font-size:.88rem;color:var(--muted)">A desítky rodinných domků a hromosvodů po celém Táborsku.</p>
+  </div>
+</section>
+
+<!-- ── PARTNERS ──────────────────────────────────────────────────── -->
+<section id="spoluprace">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Spolupráce</div>
+      <h2>Prověření partneři<br>pro každou zakázku</h2>
+      <p class="sec-sub">Spolupracujeme s ověřenými elektroinstalačními firmami — pokud potřebujete nejen revizi, ale i realizaci, máme pro vás řešení.</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card reveal">
+        <div class="p-icon">🔌</div>
+        <div class="p-body">
+          <h3>JPElektro</h3>
+          <p style="font-size:.86rem;margin:.35rem 0 .5rem">Elektroinstalační firma zaměřená na komplexní realizace pro domácnosti i firmy.</p>
+          <a href="http://www.jpelektro.eu/" target="_blank" rel="noopener">→ jpelektro.eu</a>
+        </div>
+      </div>
+      <div class="partner-card reveal d1">
+        <div class="p-icon">⚙️</div>
+        <div class="p-body">
+          <h3>Beran Elektro</h3>
+          <p style="font-size:.86rem;margin:.35rem 0 .5rem">Elektroinstalační práce a servis pro průmyslové i bytové objekty v Jihočeském kraji.</p>
+          <a href="http://www.beran-elektro.cz/" target="_blank" rel="noopener">→ beran-elektro.cz</a>
+        </div>
+      </div>
+      <div class="partner-card reveal d2">
+        <div class="p-icon">🛡️</div>
+        <div class="p-body">
+          <h3>Komplexní řešení na klíč</h3>
+          <p style="font-size:.86rem;margin:.35rem 0 .5rem">Odstraňování závad, bezpečnostní systémy, kamery, datové rozvody — vše zprostředkujeme.</p>
+          <a href="#kontakt">→ Nezávazně se zeptat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ───────────────────────────────────────────────────── -->
+<section id="cenik">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Ceník</div>
+      <h2>Transparentní ceny,<br>žádné skryté poplatky</h2>
+      <p class="sec-sub" style="margin-bottom:2.2rem">Cenu sdělíme před příjezdem. U větších zakázek domluvíme cenu individuálně.</p>
+    </div>
+    <div class="reveal">
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Typ revize</th><th style="text-align:right">Cena</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="pt-name">Byt</div><div class="pt-desc">Revize elektroinstalací a elektrorozvaděčů</div></td>
+            <td class="pt-price">od 1 000 Kč</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Rodinný dům</div><div class="pt-desc">Revize elektroinstalací a elektrorozvaděčů</div></td>
+            <td class="pt-price">od 1 500 Kč</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Hromosvod – rodinný dům</div><div class="pt-desc">Kompletní revize bleskosvodné soustavy</div></td>
+            <td class="pt-price">1 500 Kč</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Větší objekt s více rozvaděči</div><div class="pt-desc">Hotely, komerční budovy, průmyslové haly</div></td>
+            <td class="pt-price">~1 000 Kč/rozvaděč</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Elektrické nářadí a spotřebiče</div><div class="pt-desc">Nad 20 ks – výhodná cena pro firmy a živnostníky</div></td>
+            <td class="pt-price">30–50 Kč/ks</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Revizní práce většího rozsahu</div><div class="pt-desc">Komplexní projekty dle zadání</div></td>
+            <td class="pt-note">Cena dohodou</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Poradenství, kontroly, odborný dohled</div><div class="pt-desc">Pro elektroinstalační firmy a investory</div></td>
+            <td class="pt-note">Cena dohodou</td>
+          </tr>
+          <tr>
+            <td><div class="pt-name">Cestovné</div><div class="pt-desc">V oblasti Tábora zpravidla zdarma</div></td>
+            <td class="pt-price">5 Kč/km <span style="color:var(--muted);font-size:.78rem">nebo zdarma</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────────────────── -->
+<section id="kontakt">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">Kontakt</div>
+      <h2>Napište nebo zavolejte —<br>odpovíme do 24 hodin</h2>
+    </div>
+    <div class="contact-grid" style="margin-top:2.8rem">
+      <div class="contact-info reveal">
+        <div class="ci-row">
+          <div class="ci-ico">👤</div>
+          <div><div class="ci-lbl">Revizní technik</div><div class="ci-val">Jan Lexa</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ico">📞</div>
+          <div><div class="ci-lbl">Telefon</div><div class="ci-val"><a href="tel:+420603153214">+420 603 153 214</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ico">✉️</div>
+          <div><div class="ci-lbl">E-mail</div><div class="ci-val"><a href="mailto:dir@cmail.cz">dir@cmail.cz</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ico">📍</div>
+          <div><div class="ci-lbl">Adresa</div><div class="ci-val">nám. F. Křižíka 496/10<br>390 01 Tábor</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-ico">🏛️</div>
+          <div><div class="ci-lbl">IČO</div><div class="ci-val">600 63 530</div></div>
+        </div>
+        <div style="padding:1.2rem 1.4rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);">
+          <div style="font-size:.78rem;color:var(--muted);margin-bottom:.4rem">Oblast působení</div>
+          <div style="font-size:.9rem;color:var(--text);font-weight:500">Tábor a okolí · Jihočeský kraj<br><span style="color:var(--muted);font-size:.8rem">Cestovné v oblasti Tábora zdarma</span></div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal d1">
+        <div class="form-title">Nezávazná poptávka</div>
+        <form action="mailto:dir@cmail.cz" method="get" enctype="text/plain">
+          <div class="form-2col">
+            <div class="form-row">
+              <label>Jméno *</label>
+              <input type="text" name="jmeno" placeholder="Jan Novák" required />
+            </div>
+            <div class="form-row">
+              <label>Telefon *</label>
+              <input type="tel" name="telefon" placeholder="+420 xxx xxx xxx" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Typ revize</label>
+            <select name="typ">
+              <option>Revize bytu</option>
+              <option>Revize rodinného domu</option>
+              <option>Revize hromosvodu</option>
+              <option>Revize firemního objektu</option>
+              <option>Revize nářadí / spotřebičů</option>
+              <option>Poradenství / odborný dohled</option>
+              <option>Bezpečnostní nebo kamerový systém</option>
+              <option>Jiné</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Zpráva</label>
+            <textarea name="zprava" rows="4" placeholder="Stručně popište váš objekt nebo požadavek..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Odeslat poptávku →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-copy">© 2025 Revize Tábor – Jan Lexa · IČO 600 63 530</div>
+    <div class="footer-links">
+      <a href="#sluzby">Služby</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#reference">Reference</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── JS ────────────────────────────────────────────────────────── -->
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
