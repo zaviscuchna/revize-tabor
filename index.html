@@ -177,8 +177,42 @@ nav {
 .why-card h3 { margin-bottom: .4rem; }
 .why-card p  { font-size: .88rem; }
 
-/* ── Photo gallery ──────────────────────────────────────────────── */
+/* ── Before/After ───────────────────────────────────────────────── */
 #galerie { background: var(--bg2); }
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.ba-pair {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.ba-pair-title {
+  padding: .75rem 1.2rem;
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); border-bottom: 1px solid var(--border);
+}
+.ba-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.ba-col { position: relative; overflow: hidden; }
+.ba-col img {
+  width: 100%; height: 220px; object-fit: cover; display: block;
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+.ba-col:hover img { transform: scale(1.05); }
+.ba-badge {
+  position: absolute; top: 10px; left: 10px;
+  font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 6px;
+}
+.ba-badge.pred { background: rgba(220,50,50,.85); color: #fff; }
+.ba-badge.po   { background: rgba(34,180,80,.85);  color: #fff; }
+.ba-divider {
+  width: 2px; background: var(--border); position: relative;
+}
+
+/* ── Photo gallery ──────────────────────────────────────────────── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -186,7 +220,7 @@ nav {
   gap: 10px;
 }
 @media (max-width: 720px) { .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } }
-@media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } .ba-cols { grid-template-columns: 1fr; } .ba-col img { height: 180px; } }
 
 .gallery-item {
   position: relative; overflow: hidden; border-radius: var(--r);
@@ -408,19 +442,19 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <div class="hc-label">Orientační ceny revizí</div>
         <div class="hc-row">
           <div><div class="hc-name">Byt</div><div class="hc-sub">Elektroinstalace + rozvaděč</div></div>
-          <div class="hc-price">od 1 000 Kč</div>
+          <div class="hc-price">od 2 000 Kč</div>
         </div>
         <div class="hc-row">
           <div><div class="hc-name">Rodinný dům</div><div class="hc-sub">Elektroinstalace + rozvaděč</div></div>
-          <div class="hc-price">od 1 500 Kč</div>
+          <div class="hc-price">od 4 000 Kč</div>
         </div>
         <div class="hc-row">
-          <div><div class="hc-name">Hromosvod RD</div><div class="hc-sub">Kompletní revize</div></div>
-          <div class="hc-price">1 500 Kč</div>
+          <div><div class="hc-name">Hromosvod</div><div class="hc-sub">Každý další svod +500 Kč</div></div>
+          <div class="hc-price">od 2 000 Kč</div>
         </div>
         <div class="hc-row">
-          <div><div class="hc-name">Firemní objekt</div><div class="hc-sub">Cena dle rozsahu</div></div>
-          <div class="hc-price">~1 000 Kč/rozvaděč</div>
+          <div><div class="hc-name">Spotřebiče</div><div class="hc-sub">Nářadí, el. přístroje</div></div>
+          <div class="hc-price">od 50 Kč/ks</div>
         </div>
         <a href="#kontakt" class="hc-cta">Poptat revizi zdarma →</a>
       </div>
@@ -482,29 +516,74 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
   <div class="container">
     <div class="reveal">
       <div class="sec-label">Fotogalerie</div>
-      <h2>Ukázka naší práce</h2>
-      <p class="sec-sub">Reálné fotografie z dokončených zakázek — rozvaděče, průmyslové instalace, řídicí panely.</p>
+      <h2>Před a po — výsledky mluví za vše</h2>
+      <p class="sec-sub">Každá zakázka začíná důkladnou prohlídkou. Podívejte se, jak vypadají rozvaděče před naší prací a po ní.</p>
+    </div>
+
+    <div class="ba-grid reveal">
+      <!-- Pár 1 -->
+      <div class="ba-pair">
+        <div class="ba-pair-title">Bytový rozvaděč — úprava kabeláže</div>
+        <div class="ba-cols">
+          <div class="ba-col">
+            <img src="IMG20241123134903.jpg" alt="Rozvaděč před revizí – chaotická kabeláž" loading="lazy" />
+            <span class="ba-badge pred">Před</span>
+          </div>
+          <div class="ba-col">
+            <img src="IMG20241213120838.jpg" alt="Rozvaděč po revizi – přehledné uspořádání" loading="lazy" />
+            <span class="ba-badge po">Po</span>
+          </div>
+        </div>
+      </div>
+      <!-- Pár 2 -->
+      <div class="ba-pair">
+        <div class="ba-pair-title">Průmyslový rozvaděč — kompletní revize</div>
+        <div class="ba-cols">
+          <div class="ba-col">
+            <img src="IMG-20250417-WA0005.jpg" alt="Rozvaděč před revizí – nepřehledné zapojení" loading="lazy" />
+            <span class="ba-badge pred">Před</span>
+          </div>
+          <div class="ba-col">
+            <img src="IMG-20250407-WA0000.jpg" alt="Rozvaděč po revizi – přehledný rozvaděč" loading="lazy" />
+            <span class="ba-badge po">Po</span>
+          </div>
+        </div>
+      </div>
+      <!-- Pár 3 -->
+      <div class="ba-pair">
+        <div class="ba-pair-title">Venkovní rozváděč — výměna pojistek</div>
+        <div class="ba-cols">
+          <div class="ba-col">
+            <img src="IMG20260330103810.jpg" alt="Staré pojistky před výměnou" loading="lazy" />
+            <span class="ba-badge pred">Před</span>
+          </div>
+          <div class="ba-col">
+            <img src="IMG-20260219-WA0018.jpg" alt="Nový rozváděč po revizi" loading="lazy" />
+            <span class="ba-badge po">Po</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p style="font-size:.82rem; color:var(--muted2); margin-bottom:1.4rem; text-transform:uppercase; letter-spacing:.07em; font-weight:700;">Další zakázky</p>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gallery-item tall" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr1.jpg')">
-        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr1.jpg" alt="Revize elektrického rozvaděče – jističe a kabeláž" loading="lazy" />
-        <div class="gallery-caption">Revize elektrického rozvaděče</div>
+      <div class="gallery-item tall" onclick="openLightbox('IMG20260224131301.jpg')">
+        <img src="IMG20260224131301.jpg" alt="Rodinný dům – revize elektrorozvaděče" loading="lazy" />
+        <div class="gallery-caption">Revize rozvaděče – rodinný dům</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr2.jpg')">
-        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr2.jpg" alt="Datový rozvaděč – síťová infrastruktura" loading="lazy" />
-        <div class="gallery-caption">Datový a síťový rozvaděč</div>
+      <div class="gallery-item" onclick="openLightbox('IMG-20260218-WA0016.jpg')">
+        <img src="IMG-20260218-WA0016.jpg" alt="Průmyslový rozvaděč s jističi Eaton" loading="lazy" />
+        <div class="gallery-caption">Průmyslový rozvaděč – Eaton jističe</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr11.jpg')">
-        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr11.jpg" alt="Svorkovnice – pečlivé uspořádání kabeláže" loading="lazy" />
-        <div class="gallery-caption">Svorkovnicové skříně s označením</div>
+      <div class="gallery-item" onclick="openLightbox('IMG-20250417-WA0000.jpg')">
+        <img src="IMG-20250417-WA0000.jpg" alt="Venkovní rozváděč – instalace jističů" loading="lazy" />
+        <div class="gallery-caption">Venkovní rozváděč – instalace</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr13.jpg')">
-        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr13.jpg" alt="Průmyslový řídicí panel – Siemens stykače" loading="lazy" />
-        <div class="gallery-caption">Průmyslový řídicí panel (Siemens)</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://revize-tabor.cz/wp-content/uploads/2018/06/obr3.jpg')">
-        <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/obr3.jpg" alt="Serverové vybavení – datové centrum" loading="lazy" />
-        <div class="gallery-caption">Serverová místnost – revize a instalace</div>
+      <div class="gallery-item" onclick="openLightbox('IMG-20250417-WA0003.jpg')">
+        <img src="IMG-20250417-WA0003.jpg" alt="Zahradní rozváděč – revize a zapojení" loading="lazy" />
+        <div class="gallery-caption">Zahradní rozváděč – revize</div>
       </div>
     </div>
   </div>
@@ -530,7 +609,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <div class="s-body">
           <h3>Revize bytu</h3>
           <p>Prověření elektroinstalace a rozvaděče. Nutné při prodeji, po rekonstrukci nebo pro pojišťovnu.</p>
-          <div class="s-price">od 1 000 Kč</div>
+          <div class="s-price">od 2 000 Kč</div>
         </div>
       </div>
       <div class="service-card reveal d1">
@@ -538,7 +617,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <div class="s-body">
           <h3>Revize rodinného domu</h3>
           <p>Kompletní prověření elektroinstalace, rozvaděče i hromosvodu. Platný protokol pro pojišťovnu.</p>
-          <div class="s-price">od 1 500 Kč</div>
+          <div class="s-price">od 4 000 Kč</div>
         </div>
       </div>
       <div class="service-card reveal d2">
@@ -546,7 +625,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <div class="s-body">
           <h3>Revize hromosvodu</h3>
           <p>Pravidelná revize bleskosvodné soustavy dle ČSN EN 62305. Povinná pro RD i komerční objekty.</p>
-          <div class="s-price">1 500 Kč</div>
+          <div class="s-price">od 2 000 Kč</div>
         </div>
       </div>
       <div class="service-card reveal">
@@ -554,15 +633,15 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <div class="s-body">
           <h3>Revize firemních objektů</h3>
           <p>Hotely, komerční centra, průmyslové haly. Práce na více rozvaděčích, výsledný protokol do archivu.</p>
-          <div class="s-price">~1 000 Kč/rozvaděč</div>
+          <div class="s-price">Cena dohodou</div>
         </div>
       </div>
       <div class="service-card reveal d1">
         <div class="s-icon">🔧</div>
         <div class="s-body">
           <h3>Revize nářadí a spotřebičů</h3>
-          <p>Elektrické ruční nářadí a spotřebiče pro firmy a živnostníky. Výhodná cena od 20 kusů.</p>
-          <div class="s-price">30–50 Kč/ks</div>
+          <p>Elektrické ruční nářadí a spotřebiče pro firmy a živnostníky.</p>
+          <div class="s-price">od 50 Kč/ks</div>
         </div>
       </div>
       <div class="service-card reveal d2">
@@ -728,35 +807,23 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <tbody>
           <tr>
             <td><div class="pt-name">Byt</div><div class="pt-desc">Revize elektroinstalací a elektrorozvaděčů</div></td>
-            <td class="pt-price">od 1 000 Kč</td>
+            <td class="pt-price">od 2 000 Kč</td>
           </tr>
           <tr>
             <td><div class="pt-name">Rodinný dům</div><div class="pt-desc">Revize elektroinstalací a elektrorozvaděčů</div></td>
-            <td class="pt-price">od 1 500 Kč</td>
+            <td class="pt-price">od 4 000 Kč</td>
           </tr>
           <tr>
-            <td><div class="pt-name">Hromosvod – rodinný dům</div><div class="pt-desc">Kompletní revize bleskosvodné soustavy</div></td>
-            <td class="pt-price">1 500 Kč</td>
+            <td><div class="pt-name">Hromosvod – základní kontrola</div><div class="pt-desc">Revize bleskosvodné soustavy, každý další svod +500 Kč</div></td>
+            <td class="pt-price">od 2 000 Kč</td>
           </tr>
           <tr>
-            <td><div class="pt-name">Větší objekt s více rozvaděči</div><div class="pt-desc">Hotely, komerční budovy, průmyslové haly</div></td>
-            <td class="pt-price">~1 000 Kč/rozvaděč</td>
+            <td><div class="pt-name">Revize spotřebičů</div><div class="pt-desc">Elektrické spotřebiče a nářadí</div></td>
+            <td class="pt-price">od 50 Kč/ks</td>
           </tr>
           <tr>
-            <td><div class="pt-name">Elektrické nářadí a spotřebiče</div><div class="pt-desc">Nad 20 ks – výhodná cena pro firmy a živnostníky</div></td>
-            <td class="pt-price">30–50 Kč/ks</td>
-          </tr>
-          <tr>
-            <td><div class="pt-name">Revizní práce většího rozsahu</div><div class="pt-desc">Komplexní projekty dle zadání</div></td>
-            <td class="pt-note">Cena dohodou</td>
-          </tr>
-          <tr>
-            <td><div class="pt-name">Poradenství, kontroly, odborný dohled</div><div class="pt-desc">Pro elektroinstalační firmy a investory</div></td>
-            <td class="pt-note">Cena dohodou</td>
-          </tr>
-          <tr>
-            <td><div class="pt-name">Cestovné</div><div class="pt-desc">V oblasti Tábora zpravidla zdarma</div></td>
-            <td class="pt-price">5 Kč/km <span style="color:var(--muted);font-size:.78rem">nebo zdarma</span></td>
+            <td><div class="pt-name">Cestovné</div><div class="pt-desc">Účtováno dle ujeté vzdálenosti</div></td>
+            <td class="pt-price">10 Kč/km</td>
           </tr>
         </tbody>
       </table>
