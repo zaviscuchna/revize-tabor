@@ -180,9 +180,9 @@ nav {
 /* ── Before/After ───────────────────────────────────────────────── */
 #galerie { background: var(--bg2); }
 .ba-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 .ba-pair {
@@ -190,27 +190,26 @@ nav {
   overflow: hidden;
 }
 .ba-pair-title {
-  padding: .75rem 1.2rem;
-  font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--muted); border-bottom: 1px solid var(--border);
+  padding: 1rem 1.6rem;
+  font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--amber); border-bottom: 1px solid var(--border);
+  background: rgba(245,166,35,.05);
 }
 .ba-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.ba-cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; }
 .ba-col { position: relative; overflow: hidden; }
 .ba-col img {
-  width: 100%; height: 220px; object-fit: cover; display: block;
+  width: 100%; height: 320px; object-fit: cover; display: block;
   transition: transform .5s cubic-bezier(.25,.46,.45,.94);
 }
-.ba-col:hover img { transform: scale(1.05); }
+.ba-col:hover img { transform: scale(1.04); }
 .ba-badge {
-  position: absolute; top: 10px; left: 10px;
-  font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-  padding: 4px 10px; border-radius: 6px;
+  position: absolute; top: 12px; left: 12px;
+  font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 6px;
 }
-.ba-badge.pred { background: rgba(220,50,50,.85); color: #fff; }
-.ba-badge.po   { background: rgba(34,180,80,.85);  color: #fff; }
-.ba-divider {
-  width: 2px; background: var(--border); position: relative;
-}
+.ba-badge.pred { background: rgba(220,50,50,.9); color: #fff; }
+.ba-badge.po   { background: rgba(34,180,80,.9);  color: #fff; }
 
 /* ── Photo gallery ──────────────────────────────────────────────── */
 .gallery-grid {
@@ -292,13 +291,15 @@ nav {
 
 /* ── References ─────────────────────────────────────────────────── */
 #reference { background: var(--bg2); }
-.ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: .9rem; }
-.ref-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.2rem 1.4rem; transition: border-color .3s; }
+.ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
+.ref-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 1.4rem 1.2rem; transition: border-color .3s; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 180px; text-align: center; overflow: hidden; }
 .ref-card:hover { border-color: rgba(245,166,35,.28); }
 .ref-card.highlight { border-color: rgba(245,166,35,.28); background: rgba(245,166,35,.06); }
 .ref-card.highlight .rc-name { color: var(--amber); }
-.rc-name { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-.rc-loc  { font-size: .76rem; color: var(--muted); }
+.rc-logo { margin-bottom: .7rem; width: 100%; display: flex; align-items: center; justify-content: center; }
+.rc-logo img { height: 100px; width: 100%; object-fit: contain; display: block; filter: brightness(1.15) saturate(.9); }
+.rc-name { font-size: .95rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.rc-loc  { font-size: .78rem; color: var(--muted); }
 
 /* ── Partners ───────────────────────────────────────────────────── */
 #spoluprace { background: var(--bg); }
@@ -406,7 +407,7 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
       <div>
         <img src="https://revize-tabor.cz/wp-content/uploads/2018/06/logoos2.png"
              alt="Revize Tábor"
-             style="height:54px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin-bottom:1.6rem;display:block;" />
+             style="height:220px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin-bottom:1.6rem;display:block;margin-left:auto;margin-right:auto;" />
         <div class="hero-badge">Certifikovaný revizní technik · Tábor a Jihočeský kraj</div>
         <h1 class="hero-title">
           Elektrorevize,<br>
@@ -538,31 +539,36 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
           </div>
         </div>
       </div>
-      <!-- Pár 2 -->
+      <!-- Zakázka 2 -->
       <div class="ba-pair">
-        <div class="ba-pair-title">Průmyslový rozvaděč — kompletní revize</div>
-        <div class="ba-cols">
+        <div class="ba-pair-title">Průmyslový a venkovní rozvaděč — kompletní instalace</div>
+        <div class="ba-cols-3">
           <div class="ba-col">
-            <img src="IMG-20250417-WA0005.jpg" alt="Rozvaděč před revizí – nepřehledné zapojení" loading="lazy" />
+            <img src="IMG-20250417-WA0005.jpg" alt="Průmyslový rozvaděč před revizí" loading="lazy" />
             <span class="ba-badge pred">Před</span>
           </div>
           <div class="ba-col">
-            <img src="IMG-20250407-WA0000.jpg" alt="Rozvaděč po revizi – přehledný rozvaděč" loading="lazy" />
-            <span class="ba-badge po">Po</span>
+            <img src="IMG-20250417-WA0000.jpg" alt="Venkovní rozvaděč – instalace" loading="lazy" />
+          </div>
+          <div class="ba-col">
+            <img src="IMG-20250417-WA0003.jpg" alt="Zahradní rozvaděč – revize" loading="lazy" />
           </div>
         </div>
       </div>
-      <!-- Pár 3 -->
+      <!-- Zakázka 3 -->
       <div class="ba-pair">
-        <div class="ba-pair-title">Venkovní rozváděč — výměna pojistek</div>
-        <div class="ba-cols">
+        <div class="ba-pair-title">Výměna pojistek a revize EATON rozvaděče</div>
+        <div class="ba-cols-3">
           <div class="ba-col">
-            <img src="IMG20260330103810.jpg" alt="Staré pojistky před výměnou" loading="lazy" />
+            <img src="IMG20260330103810.jpg" alt="Venkovní rozvaděč – pojistky před výměnou" loading="lazy" />
             <span class="ba-badge pred">Před</span>
           </div>
           <div class="ba-col">
-            <img src="IMG-20260219-WA0018.jpg" alt="Nový rozváděč po revizi" loading="lazy" />
+            <img src="IMG-20260219-WA0018.jpg" alt="Venkovní rozvaděč po revizi" loading="lazy" />
             <span class="ba-badge po">Po</span>
+          </div>
+          <div class="ba-col">
+            <img src="IMG-20260218-WA0016.jpg" alt="Průmyslový rozvaděč – EATON jističe" loading="lazy" />
           </div>
         </div>
       </div>
@@ -576,17 +582,9 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
         <img src="IMG20260224131301.jpg" alt="Rodinný dům – revize elektrorozvaděče" loading="lazy" />
         <div class="gallery-caption">Revize rozvaděče – rodinný dům</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('IMG-20260218-WA0016.jpg')">
-        <img src="IMG-20260218-WA0016.jpg" alt="Průmyslový rozvaděč s jističi Eaton" loading="lazy" />
-        <div class="gallery-caption">Průmyslový rozvaděč – Eaton jističe</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('IMG-20250417-WA0000.jpg')">
-        <img src="IMG-20250417-WA0000.jpg" alt="Venkovní rozváděč – instalace jističů" loading="lazy" />
-        <div class="gallery-caption">Venkovní rozváděč – instalace</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('IMG-20250417-WA0003.jpg')">
-        <img src="IMG-20250417-WA0003.jpg" alt="Zahradní rozváděč – revize a zapojení" loading="lazy" />
-        <div class="gallery-caption">Zahradní rozváděč – revize</div>
+      <div class="gallery-item" onclick="openLightbox('IMG-20250407-WA0000.jpg')">
+        <img src="IMG-20250407-WA0000.jpg" alt="Velký průmyslový rozvaděč po revizi" loading="lazy" />
+        <div class="gallery-caption">Průmyslový rozvaděč – po revizi</div>
       </div>
     </div>
   </div>
@@ -705,52 +703,56 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
     </div>
     <div class="ref-grid reveal">
       <div class="ref-card highlight">
-        <div class="rc-name">ČEZ</div>
+        <div class="rc-logo"><img src="klienti/cez_logo.jpg" alt="ČEZ" style="height:110px;width:110px;object-fit:cover;border-radius:8px" /></div>
         <div class="rc-loc">Elektroměrové rozvaděče</div>
       </div>
       <div class="ref-card highlight">
-        <div class="rc-name">EGD</div>
+        <div class="rc-logo"><img src="klienti/eon_logo.jpg" alt="E.ON" style="height:100px;width:160px;object-fit:cover;border-radius:16px" /></div>
         <div class="rc-loc">Elektroměrové rozvaděče</div>
       </div>
       <div class="ref-card highlight">
-        <div class="rc-name">ČEPS</div>
+        <div class="rc-logo"><img src="klienti/IMG_1603-removebg-preview.png" alt="EGD" /></div>
+        <div class="rc-loc">Elektroměrové rozvaděče</div>
+      </div>
+      <div class="ref-card highlight">
+        <div class="rc-logo"><img src="klienti/ceps_logo.png" alt="ČEPS" /></div>
         <div class="rc-loc">Přenosová soustava</div>
       </div>
       <div class="ref-card highlight">
-        <div class="rc-name">Billa</div>
+        <div class="rc-logo"><img src="klienti/IMG_1605-removebg-preview.png" alt="Billa" /></div>
         <div class="rc-loc">Revize prodejen</div>
       </div>
       <div class="ref-card highlight">
-        <div class="rc-name">Albert</div>
+        <div class="rc-logo"><img src="klienti/IMG_1604-removebg-preview.png" alt="Albert" /></div>
         <div class="rc-loc">Revize prodejen</div>
       </div>
       <div class="ref-card highlight">
-        <div class="rc-name">OKIN Facility</div>
+        <div class="rc-logo"><img src="klienti/okin_logo.jpg" alt="OKIN Facility" style="width:100%;height:90px;object-fit:cover;border-radius:12px" /></div>
         <div class="rc-loc">Facility management</div>
       </div>
       <div class="ref-card">
-        <div class="rc-name">Komerční banka</div>
-        <div class="rc-loc">OKIN FACILITY – revize poboček</div>
+        <div class="rc-logo"><img src="klienti/kb_logo.jpg" alt="Komerční banka" style="border-radius:12px" /></div>
+        <div class="rc-loc">Revize poboček</div>
       </div>
       <div class="ref-card">
-        <div class="rc-name">Hotel Dvořák</div>
-        <div class="rc-loc">Tábor</div>
+        <div class="rc-logo"><img src="klienti/IMG_1614-removebg-preview.png" alt="LH Hotel Dvořák" /></div>
+        <div class="rc-loc">České Budějovice, Tábor</div>
       </div>
       <div class="ref-card">
-        <div class="rc-name">Hotel Dvořák</div>
-        <div class="rc-loc">České Budějovice</div>
+        <div class="rc-logo"><img src="klienti/IMG_1608-removebg-preview.png" alt="Galerie Dvořák" /></div>
+        <div class="rc-loc">České Budějovice, Tábor</div>
       </div>
       <div class="ref-card">
-        <div class="rc-name">Obchodní galerie Dvořák</div>
-        <div class="rc-loc">České Budějovice</div>
-      </div>
-      <div class="ref-card">
-        <div class="rc-name">Obchodní dům Dvořák</div>
-        <div class="rc-loc">Tábor</div>
-      </div>
-      <div class="ref-card">
-        <div class="rc-name">Parkhotel Hluboká</div>
+        <div class="rc-logo"><img src="klienti/IMG_1613-removebg-preview.png" alt="Parkhotel Hluboká" style="height:130px;filter:brightness(2.5) saturate(1.2)" /></div>
         <div class="rc-loc">Hluboká nad Vltavou</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-logo"><img src="klienti/IMG_1607-removebg-preview.png" alt="Linde" style="height:150px;filter:brightness(3) saturate(1.5)" /></div>
+        <div class="rc-loc">Tábor</div>
+      </div>
+      <div class="ref-card">
+        <div class="rc-logo"><img src="klienti/IMG_1606-removebg-preview.png" alt="ÚZSVM" style="height:160px;filter:brightness(1.6) saturate(1.2)" /></div>
+        <div class="rc-loc">Tábor</div>
       </div>
       <div class="ref-card">
         <div class="rc-name">Hotel Žižkovy lázně</div>
@@ -759,14 +761,6 @@ footer { border-top: 1px solid var(--border); padding: 2.2rem 0; }
       <div class="ref-card">
         <div class="rc-name">Průmyslová zóna Vožická</div>
         <div class="rc-loc">Průmyslové a skladové haly, Tábor</div>
-      </div>
-      <div class="ref-card">
-        <div class="rc-name">Linde</div>
-        <div class="rc-loc">Tábor</div>
-      </div>
-      <div class="ref-card">
-        <div class="rc-name">ÚZSVN</div>
-        <div class="rc-loc">Tábor</div>
       </div>
     </div>
     <p class="reveal" style="margin-top:1.4rem;font-size:.88rem;color:var(--muted)">A desítky rodinných domků a hromosvodů po celém Táborsku.</p>
